@@ -9,8 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building using Maven'
-                sh 'mvn clean package'
-                // bat 'mvn clean package'  // Windows
+                 bat 'mvn clean package'  
             }
         }
     }

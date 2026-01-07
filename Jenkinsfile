@@ -9,9 +9,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building using Maven'
-                bat 'mvn package'
+                bat '''
+                mvn package ^
+                -Dmaven.wagon.http.ssl.insecure=true ^
+                -Dmaven.wagon.http.ssl.allowall=true
+                '''
             }
         }
     }
 }
-
